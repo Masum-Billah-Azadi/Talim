@@ -1,14 +1,18 @@
-import { useState } from 'react';
-import { authService } from '../firebase';
-import AppRouter from './Router';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { AuthProvider } from "../contexts/AuthContext";
+import Login from "./pages/Login";
+import Signup from "./pages/Singup";
 
 function App() {
-  const [isLoggedin,setIsLoggedin]= useState(authService.currentUser);
   return (
-    <div className="App">
-      <AppRouter isLoggedin={isLoggedin}/>
-      <footer>&copy;{new Date().getFullYear()}Talim</footer>
-    </div>
+    <Router>
+      <AuthProvider>
+          <Switch>
+            <Route exact path="/" component={Signup} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
 
