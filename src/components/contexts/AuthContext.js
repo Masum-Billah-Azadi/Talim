@@ -1,13 +1,12 @@
 import {
   createUserWithEmailAndPassword,
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
+  getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged,
+  signInWithEmailAndPassword, signInWithPopup, signOut,
   updateProfile
 } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import "../../firebase";
+import { auth } from "../../firebase";
 
 const AuthContext = React.createContext();
 
@@ -44,6 +43,20 @@ export function AuthProvider({ children }) {
       ...user,
     });
   }
+//Google And GitHub Api to Singup
+  const signInWithGoogle = () => {
+    setLoading(true);
+
+    signInWithPopup(auth, new GoogleAuthProvider())
+      .then((res) => console.log(res))
+      .finally(() => setLoading(false));
+  };
+  const signInWithGithub = () => {
+    setLoading(true);
+    signInWithPopup(auth, new GithubAuthProvider())
+      .then((res) => console.log(res))
+      .finally(() => setLoading(false));
+  };
 
   // login function
   function login(email, password) {
@@ -62,6 +75,8 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
+    signInWithGoogle,
+    signInWithGithub
   };
 
   return (

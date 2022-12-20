@@ -8,7 +8,7 @@ export default function SignupForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState("");
-
+  const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
 
@@ -33,8 +33,10 @@ export default function SignupForm() {
       setError("Failed to create an account!");
     }
   }
-
+  const toggleAccount = () => setNewAccount((prev) => !prev);
+  const { signInWithGoogle, signInWithGithub } = useAuth();
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -89,5 +91,14 @@ export default function SignupForm() {
         Already have an account? <Link to="/Login">Login</Link> instead.
       </div>
     </form>
+    <span onClick={toggleAccount} className="authSwitch">
+    {newAccount ? "Sign In" : "Create Account"}
+    </span>
+    <div>
+    <button onClick={signInWithGoogle}>Continue with Google</button>
+    <button onClick={signInWithGithub}>Continue with GitHub</button>
+    </div>
+    </>
+    
   );
 }
