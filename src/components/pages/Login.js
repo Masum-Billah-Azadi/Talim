@@ -1,6 +1,6 @@
-import LoginForm from "../LoginForm";
+import LoginForm from "../sComponent/LoginForm";
 
-export default function Signup() {
+const Login = ()=> {
   return (
     <>
       <h1>Login to your account</h1>
@@ -11,3 +11,4 @@ export default function Signup() {
     </>
   );
 }
+export default Login

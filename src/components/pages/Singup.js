@@ -1,9 +1,9 @@
-import SignupForm from "../SignupForm";
+import SignupForm from "../sComponent/SignupForm";
 
-export default function Signup() {
+const Signup = ()=> {
   return (
     <>
-      <h1>Create an account</h1>
+      <h1>Signup to your account</h1>
 
       <div>
         <SignupForm />
@@ -11,3 +11,4 @@ export default function Signup() {
     </>
   );
 }
+export default Signup;

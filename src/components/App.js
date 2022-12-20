@@ -1,18 +1,11 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { AuthProvider } from "../contexts/AuthContext";
-import Login from "./pages/Login";
-import Signup from "./pages/Singup";
-
+import AppRouter from "./Router";
 function App() {
+  
   return (
-    <Router>
-      <AuthProvider>
-          <Switch>
-            <Route exact path="/" component={Signup} />
-            <Route exact path="/login" component={Login} />
-          </Switch>
-      </AuthProvider>
-    </Router>
+    <>
+        <AppRouter/>
+        <footer>&copy; {new Date().getFullYear()}Masum</footer>
+    </>
   );
 }
 
