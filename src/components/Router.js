@@ -3,9 +3,9 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { auth } from "../firebase";
 import { AuthProvider } from "./contexts/AuthContext";
 import Navigation from "./Navigation";
+import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Singup from "./pages/Singup";
-import Home from "./sComponent/Home";
 const AppRouter = ()=>{
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
