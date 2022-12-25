@@ -8,10 +8,12 @@ import Profile from "./pages/Profile";
 import Singup from "./pages/Singup";
 const AppRouter = ()=>{
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userObj, setUserObj] = useState(null);
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if(user){
         setIsLoggedIn(true);
+        setUserObj(user);
       }else{
         setIsLoggedIn(false);
       }
@@ -25,7 +27,7 @@ const AppRouter = ()=>{
             {isLoggedIn ? (
               <>
             <Route exact path="/">
-              <Home/>
+              <Home  userObj={userObj} />
             </Route>
             <Route exact path="/Profile">
               <Profile/>

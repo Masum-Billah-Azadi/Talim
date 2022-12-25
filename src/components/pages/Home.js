@@ -5,6 +5,7 @@ import {
 } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { dbService } from "../../firebase";
+import Nweet from "../Nweet";
 
 const Home = ({ userObj }) => {
 const [nweet, setNweet] = useState("");
@@ -28,8 +29,9 @@ const onSubmit = async (e) => {
   e.preventDefault();
   try {
   const docRef = await addDoc(collection(dbService, "nweets" ), {
-  nweet,
+  text:nweet,
   createdAt: Date.now(),
+  creatorId: userObj.uid,
   });
   console.log(" Document written with ID: ", docRef.id);
   } catch (error) {
@@ -55,10 +57,11 @@ return (
           </form>
           <div>
             {nweets.map((nweet) => (
-              <div key={nweet.id}>
-                <h4>{nweet.nweet}</h4>
-                <h4>{nweet.text}</h4>
-              </div>
+              <Nweet
+                key={nweet.id}
+                nweetObj={nweet}
+                isOwner={nweet.creatorId === userObj.uid}
+              />
             ))}
           </div>
         </div>

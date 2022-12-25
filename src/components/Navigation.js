@@ -5,7 +5,7 @@ const Navigation = () => (
   <nav>
     <ul>
       <li>
-        <Link to="/">Main Profile</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <Link to="/profile">My Profile</Link>
