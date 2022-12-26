@@ -75,7 +75,8 @@ export default function SignupForm() {
         onChange={(e) => setConfirmPassword(e.target.value)}
       />
 
-      <checkbox
+      <input
+        type="checkbox"
         required
         text="I agree to the Terms &amp; Conditions"
         value={agree}
