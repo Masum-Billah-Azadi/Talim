@@ -22,16 +22,16 @@ const AppRouter = ()=>{
       <>
       {init ? (
       <Router>
-        {Boolean(userObj) && <Navigation/>}
+        {Boolean(userObj) && <Navigation userObj={userObj}/>}
         <AuthProvider>
           <Switch>
                 {Boolean(userObj) ? (
                   <>
                 <Route exact path="/">
-                  <Home  userObj={userObj} />
+                  <Home userObj={userObj}/>
                 </Route>
                 <Route exact path="/Profile">
-                  <Profile/>
+                  <Profile userObj={userObj}/>
                 </Route>
               </>)
             : 
