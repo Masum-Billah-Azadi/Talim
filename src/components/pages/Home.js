@@ -32,8 +32,7 @@ const onSubmit = async (e) => {
     
   try {
   let attachmentUrl = "";
-   // eslint-disable-next-line eqeqeq
-  if(attachment != ""){ //This Area Use for "Images Add Tweet" "{uuid} give random id"
+  if(attachment !==""){ //This Area Use for "Images Add Tweet" "{uuid} give random id"
     const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
     const response = await uploadString(attachmentRef, attachment, "data_url");
     attachmentUrl = await getDownloadURL(response.ref);
