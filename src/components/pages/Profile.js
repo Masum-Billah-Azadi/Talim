@@ -2,7 +2,7 @@ import { updateProfile } from "@firebase/auth";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
-const Profile = ({userObj}) => {
+const Profile = ({refreshUser, userObj}) => {
     const hestory = useHistory();
     //Show User Name ,This Hulp Us Change user Name
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
@@ -20,9 +20,10 @@ const Profile = ({userObj}) => {
     };
     const onSubmit = async (event) => {
       event.preventDefault();
-      if (userObj.displayName !== newDisplayName) {
-        await updateProfile(userObj, { displayName: newDisplayName });
-      }
+      if(userObj.displayName !== newDisplayName){
+        await updateProfile(auth.currentUser, { displayName: newDisplayName });
+        refreshUser();//react and Firebase Auto detect Change and User_Name currently
+        }
     };
 
     //Update The User Name} Akan Teke Sobi O Change Kora Jay

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { auth } from "../firebase";
@@ -13,11 +14,25 @@ const AppRouter = ()=>{
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if(user){
-        setUserObj(user);
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) => updateProfile(user, { displayName: user.displayName }),
+          });
       }
       setInit(true);
     });
   }, []);
+//React Relode Page Update User Name this -- refreshUser = () => {
+  const refreshUser = () => {
+    const user = auth.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (args) => updateProfile(user, { displayName: user.displayName }),
+      //react and Firebase Auto detect Change and User_Name currently
+      });
+  };
     return(
       <>
       {init ? (
@@ -31,7 +46,8 @@ const AppRouter = ()=>{
                   <Home userObj={userObj}/>
                 </Route>
                 <Route exact path="/Profile">
-                  <Profile userObj={userObj}/>
+                  <Profile userObj={userObj} refreshUser={refreshUser}/>
+                  {/* react and Firebase Auto detect Change and User_Name currently */}
                 </Route>
               </>)
             : 
