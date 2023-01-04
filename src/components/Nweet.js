@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import { deleteObject, ref } from "@firebase/storage";
+import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { dbService, storageService } from "../firebase";
+
+//icon input
 
 const Nweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -40,24 +46,25 @@ const Nweet = ({ nweetObj, isOwner }) => {
               autoFocus
               className="formInput"
             />
-            <input type="submit" value="Update Nweet"/>
+            <input type="submit" value="Update Nweet" className="formBtn"/>
           </form>
-          <span onClick={toggleEditing}>
+          <span onClick={toggleEditing} className="formBtn cancelBtn">
             Cancel
           </span>
         </>
       ) : (
         <>
           <h4>{nweetObj.text}</h4>
-          {nweetObj.attachmentUrl && (
-            // eslint-disable-next-line jsx-a11y/alt-text
-            <img src={nweetObj.attachmentUrl} width="50px" height="50px" />
-          )}
+          {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} />}
           {isOwner && (
-            <>
-            <button onClick={onDeleteClick}>Delete Nweet</button>
-            <button onClick={toggleEditing}>Edit Nweet</button>
-          </>
+          <div class="nweet__actions">
+            <span onClick={onDeleteClick}>
+            <FontAwesomeIcon icon={faTrash} />
+            </span>
+            <span onClick={toggleEditing}>
+            <FontAwesomeIcon icon={faPencilAlt} />
+            </span>
+          </div>
           )}
         </>
       )}

@@ -19,6 +19,8 @@ const AppRouter = ()=>{
           uid: user.uid,
           updateProfile: (args) => updateProfile(user, { displayName: user.displayName }),
           });
+      }else {
+        setUserObj(null);
       }
       setInit(true);
     });
@@ -40,6 +42,16 @@ const AppRouter = ()=>{
         {Boolean(userObj) && <Navigation userObj={userObj}/>}
         <AuthProvider>
           <Switch>
+            <div
+              style={{
+                maxWidth: 890,
+                width: "100%",
+                margin: "0 auto",
+                marginTop: 80,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
                 {Boolean(userObj) ? (
                   <>
                 <Route exact path="/">
@@ -61,6 +73,7 @@ const AppRouter = ()=>{
             <Route exact path="/Singup">
               <Singup/>
             </Route>
+            </div>
           </Switch>
         </AuthProvider>
       </Router>

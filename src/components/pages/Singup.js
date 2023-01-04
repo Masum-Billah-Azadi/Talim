@@ -1,3 +1,7 @@
+import {
+  faGithub, faGoogle, faTwitter
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -7,10 +11,9 @@ export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [agree, setAgree] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState();
-  const [loading, setLoading] = useState();
+  // const [loading, setLoading] = useState();
 
   const { signup } = useAuth();
   const history = useHistory();
@@ -24,21 +27,27 @@ export default function SignupForm() {
 
     try {
       setError("");
-      setLoading(true);
+      // setLoading(true);
       await signup(email, password, username);
       history.push("/");
     } catch (err) {
       console.log(err);
-      setLoading(false);
+      // setLoading(false);
       setError("Failed to create an account!");
     }
   }
   const toggleAccount = () => setNewAccount((prev) => !prev);
   const { signInWithGoogle, signInWithGithub } = useAuth();
   return (
-    <>
+    <div className="authContainer">
+      <FontAwesomeIcon
+        icon={faTwitter}
+        color={"#04AAFF"}
+        size="3x"
+        style={{ marginBottom: 30 }}
+      />
     <h1>Signup to your account</h1>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       <input
         type="text"
         placeholder="Enter name"
@@ -46,6 +55,7 @@ export default function SignupForm() {
         required
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        className="authInput"
       />
 
       <input
@@ -55,6 +65,7 @@ export default function SignupForm() {
         icon="alternate_email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        className="authInput"
       />
 
       <input
@@ -64,6 +75,7 @@ export default function SignupForm() {
         icon="lock"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        className="authInput"
       />
 
       <input
@@ -73,34 +85,32 @@ export default function SignupForm() {
         icon="lock_clock"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
+        className="authInput"
       />
-
       <input
-        type="checkbox"
-        required
-        text="I agree to the Terms &amp; Conditions"
-        value={agree}
-        onChange={(e) => setAgree(e.target.value)}
-      />
+          type="submit"
+          className="authInput authSubmit"
+          value={newAccount ? "Create Account" : "Sign In"}
+        />
 
-      <button disabled={loading} type="submit">
-        <span>Submit Now</span>
-      </button>
+      {/* <button disabled={loading}>
+        <span className="authInput authSubmit">Submit Now</span>
+      </button> */}
+      {error && <span className="authError">{error}</span>}
 
-      {error && <p className="error">{error}</p>}
-
-      <div className="info">
-        Already have an account? <Link to="/Login">Login</Link> instead.
-      </div>
+      
     </form>
+    <div className="info">
+        Already have an account? <Link to="/Login">Login</Link> instead.
+    </div>
     <span onClick={toggleAccount} className="authSwitch">
     {newAccount ? "Sign In" : "Create Account"}
     </span>
-    <div>
-    <button onClick={signInWithGoogle}>Continue with Google</button>
-    <button onClick={signInWithGithub}>Continue with GitHub</button>
+    <div className="authBtns">
+    <button className="authBtn" onClick={signInWithGoogle}>Continue with Google <FontAwesomeIcon icon={faGoogle} /></button>
+    <button className="authBtn" onClick={signInWithGithub}>Continue with GitHub <FontAwesomeIcon icon={faGithub} /></button>
     </div>
-    </>
+    </div>
     
   );
 }
