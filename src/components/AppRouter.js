@@ -16,8 +16,12 @@ const AppRouter = ()=>{
       if(user){
         setUserObj({
           displayName: user.displayName,
+          photoURL: user.photoURL,
           uid: user.uid,
-          updateProfile: (args) => updateProfile(user, { displayName: user.displayName }),
+          updateProfile: (args) => updateProfile(user, 
+            { displayName: user.displayName,
+              photoURL: user.photoURL 
+            }),
           });
       }else {
         setUserObj(null);
@@ -30,28 +34,32 @@ const AppRouter = ()=>{
     const user = auth.currentUser;
     setUserObj({
       displayName: user.displayName,
+      photoURL: user.photoURL,
       uid: user.uid,
-      updateProfile: (args) => updateProfile(user, { displayName: user.displayName }),
+      updateProfile: (args) => updateProfile(user, 
+        { displayName: user.displayName,
+          photoURL: user.photoURL 
+        }),
       //react and Firebase Auto detect Change and User_Name currently
       });
   };
     return(
-      <>
+      <div 
+      style={{
+        maxWidth: 890,
+        width: "100%",
+        margin: "0 auto",
+        marginTop: 80,
+        display: "flex",
+        justifyContent: "center",
+      }}
+      >
       {init ? (
       <Router>
         {Boolean(userObj) && <Navigation userObj={userObj}/>}
         <AuthProvider>
           <Switch>
-            <div
-              style={{
-                maxWidth: 890,
-                width: "100%",
-                margin: "0 auto",
-                marginTop: 80,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <>
                 {Boolean(userObj) ? (
                   <>
                 <Route exact path="/">
@@ -73,7 +81,7 @@ const AppRouter = ()=>{
             <Route exact path="/Singup">
               <Singup/>
             </Route>
-            </div>
+            </>
           </Switch>
         </AuthProvider>
       </Router>
@@ -81,7 +89,7 @@ const AppRouter = ()=>{
         "Initializing..."
       )}
       
-    </>
+    </div>
       
     );
 };

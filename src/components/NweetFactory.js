@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addDoc, collection } from "firebase/firestore";
@@ -23,6 +24,8 @@ const NweetFactory = ({ userObj }) => {
         text:nweet,
         createdAt: Date.now(),
         creatorId: userObj.uid,
+        userId: userObj.displayName ? userObj.displayName : "User_Name",
+        userImage: userObj.photoURL !== null ? userObj.photoURL : "User_Icon",
         attachmentUrl,
         });
         console.log(" Document written with ID: ", docRef.id);
@@ -56,6 +59,11 @@ const NweetFactory = ({ userObj }) => {
   return (
     <form onSubmit={onSubmit} className="factoryForm">
       <div className="factoryInput__container">
+      <span>
+              {userObj.photoURL
+                ? <img className="ProfilePicture" src={userObj.photoURL} />
+                : <FontAwesomeIcon icon={faTwitter} color={"#04AAFF"} size="2x" />}
+            </span>
         <input
           className="factoryInput__input"
           value={nweet}

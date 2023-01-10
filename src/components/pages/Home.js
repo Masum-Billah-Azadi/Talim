@@ -33,7 +33,11 @@ return (
             {nweets.map((nweet) => (
               <Nweet
                 key={nweet.id}
+                id={nweet.id}
+                userId={nweet.userId}
                 nweetObj={nweet}
+                userImage={nweet.userImage}
+                createdAt={nweet.createdAt}
                 isOwner={nweet.creatorId === userObj.uid}
               />
             ))}

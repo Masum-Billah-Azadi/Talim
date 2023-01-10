@@ -79,6 +79,14 @@ form {
   display: flex;
   flex-direction: column;
 }
+/* profile pictute and User Avata Css */
+.ProfilePicture {
+  width: 65px;
+}
+img.User_Avater {
+  left: -44px;
+  top: -13px;
+}
 
 .logOut {
   margin-top: 50px;
@@ -187,7 +195,7 @@ form {
 
 .nweet img {
   right: -10px;
-  top: 20px;
+  /* top: 20px; for user Avata*/
   position: absolute;
   border-radius: 50%;
   width: 50px;
