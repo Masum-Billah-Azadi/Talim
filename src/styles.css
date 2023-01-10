@@ -81,7 +81,9 @@ form {
 }
 /* profile pictute and User Avata Css */
 .ProfilePicture {
-  width: 65px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 img.User_Avater {
   left: -44px;
@@ -192,7 +194,79 @@ img.User_Avater {
 .nweet h4 {
   font-size: 14px;
 }
-
+/* navigation Secttion Css */
+.Navigation nav {
+  position: fixed;
+  left: 4%;
+  height: -webkit-fill-available;
+  width: 240px;
+  border-right: 1px solid #787878;
+}
+.Navigation ul {
+  list-style: none;
+}
+#homeIcon {
+  width: fit-content;
+  padding: 9px;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out 0s;
+}
+#homeIcon:hover {
+  background-color: #ffffff24;
+}
+.Navigation li {
+  padding: 10px 17px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out 0s;
+  cursor: pointer;
+}
+.Navigation li:hover {
+  background-color: #ffffff24;
+}
+.NavIcon {
+  float: left;
+  width: 47px;
+}
+.Navigation span {
+  color: white;
+  float: left;
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: 100;
+}
+.TopTweet {
+  margin-top: 40px;
+}
+.TopTweet span {
+  background-color: rgb(29, 155, 240);
+  width: 200px;
+  text-align: center;
+  height: 35px;
+  padding-top: 6px;
+  border-radius: 50px;
+}
+.NaveBotttom {
+  height: 56px;
+  margin-top: 155px;
+  width: 200px;
+  border-radius: 50px;
+}
+.NaveBotttom:hover {
+  background-color: #ffffff24;
+}
+.NaveBotttom span {
+  float: left;
+  margin-left: 5px;
+}
+.NaveBotttom h1 {
+  float: left;
+  font-size: 18px;
+  margin-left: 11px;
+  margin-top: 20px;
+}
 .nweet img {
   right: -10px;
   /* top: 20px; for user Avata*/
