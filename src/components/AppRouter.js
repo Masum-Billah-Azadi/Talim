@@ -44,12 +44,7 @@ const AppRouter = ()=>{
       });
   };
     return(
-      <div 
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-      >
+      <div className="RouterStayel">
       {init ? (
       <Router>
         {Boolean(userObj) && <Navigation userObj={userObj}/>}

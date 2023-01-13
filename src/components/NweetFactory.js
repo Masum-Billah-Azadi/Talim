@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faGift, faImage, faList, faLocationArrow, faSmile, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
@@ -57,12 +56,13 @@ const NweetFactory = ({ userObj }) => {
         //Clear this Attacment
         const onClearAttachment = () => setAttachment(null);
   return (
+  <div className="TalemPost">
     <form onSubmit={onSubmit} className="factoryForm">
       <div className="factoryInput__container">
       <span>
               {userObj.photoURL
                 ? <img className="ProfilePicture" src={userObj.photoURL} />
-                : <FontAwesomeIcon icon={faTwitter} color={"#04AAFF"} size="2x" />}
+                : <FontAwesomeIcon icon={faUser} color={"#04AAFF"} size="2x" />}
             </span>
         <input
           className="factoryInput__input"
@@ -72,21 +72,32 @@ const NweetFactory = ({ userObj }) => {
           placeholder="What's on your mind?"
           maxLength={120}
         />
-        <input type="submit" value="&rarr;" className="factoryInput__arrow" />
+        
       </div>
-      <label for="attach-file" className="factoryInput__label">
-        <span>Add photos</span>
-        <FontAwesomeIcon icon={faPlus} />
-      </label>
-      <input
-        id="attach-file"
-        type="file"
-        accept="image/*"
-        onChange={onFileChange}
-        style={{
-          opacity: 0,
-        }}
-      />
+      <div className="factoryInput__label">
+        <label for="attach-file">
+          <ul>
+            <li><FontAwesomeIcon icon={faImage} /></li>
+            <li><FontAwesomeIcon icon={faGift} /></li>
+            <li><FontAwesomeIcon icon={faLocationArrow}/></li>
+            <li><FontAwesomeIcon icon={faList} /></li>
+            <li><FontAwesomeIcon icon={faSmile} /></li>
+            <li><FontAwesomeIcon icon={faClock} /></li>
+          </ul>
+          
+        </label>
+        <input
+          id="attach-file"
+          type="file"
+          accept="image/*"
+          onChange={onFileChange}
+          style={{
+            opacity:0,
+            width:0,
+          }}
+        />
+        <input type="submit" value="Tweet" className="factoryInput_arrow" />
+      </div>
       {attachment && (
         <div className="factoryForm__attachment">
           <img
@@ -102,6 +113,7 @@ const NweetFactory = ({ userObj }) => {
         </div>
       )}
     </form>
+  </div>
   )
 };
 

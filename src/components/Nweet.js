@@ -60,13 +60,16 @@ const Nweet = ({ nweetObj, isOwner,userId,createdAt,userImage, }) => {
           </span>
         </>
       ) : (
-        <>
-          <h4>{nweetObj.text}</h4>
-          {userImage &&<img className="User_Avater" src={userImage}/>}
-          <span>{userId}</span>
-          <span>{formatDate(createdAt)}</span>
-          {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} />}
-          {isOwner && (
+        <div className="Tamil_Post_N">
+          <div className="That_parson">
+            {userImage &&<img src={userImage}/>}
+            <div className="parsonName">{userId}</div>
+            <div className="postDate">{formatDate(createdAt)}</div>
+          </div>
+          <div className="That_Post">
+            <h4>{nweetObj.text}</h4>
+            {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} />}
+            {isOwner && (
           <div class="nweet__actions">
             <span onClick={onDeleteClick}>
             <FontAwesomeIcon icon={faTrash} />
@@ -76,7 +79,9 @@ const Nweet = ({ nweetObj, isOwner,userId,createdAt,userImage, }) => {
             </span>
           </div>
           )}
-        </>
+          </div>
+          
+        </div>
       )}
     </div>
   );

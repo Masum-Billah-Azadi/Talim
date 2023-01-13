@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "videos": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}

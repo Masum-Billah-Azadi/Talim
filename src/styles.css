@@ -31,7 +31,11 @@ a {
 form {
   width: 100%;
 }
-
+/* AppRouter Style Start */
+.RouterStayel {
+  display: flex;
+  align-items: flex-start;
+}
 .nweet-input::placeholder {
   color: white;
   opacity: 0.9;
@@ -45,18 +49,19 @@ form {
 }
 
 .formInput {
-  width: 100%;
+  width: 80%;
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid black;
   text-align: center;
   background-color: white;
   color: black;
+  margin: 12px 32px;
+  font-size: larger;
 }
-
 .formBtn {
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   padding: 7px 20px;
   text-align: center;
   color: white;
@@ -69,15 +74,30 @@ form {
   cursor: pointer;
   background-color: tomato;
 }
+.Home_Page {
+  width: 905px;
+  display: flex;
+}
 
-/* Profile Page */
-
+/* Profile From Edit Section */
+.Profile_Container {
+  background-color: #ffffff69;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+.Profile_Container h1 {
+  font-size: large;
+  margin-top: 10px;
+}
 .profileForm {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
   padding-bottom: 30px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+}
+img.Edit_Pro_img {
+  width: 300px;
+  height: fit-content;
+  margin-top: 10px;
 }
 /* profile pictute and User Avata Css */
 .ProfilePicture {
@@ -93,14 +113,21 @@ img.User_Avater {
 .logOut {
   margin-top: 50px;
 }
-
+.Right_Side {
+  height: 53px;
+  width: 303px;
+  background-color: blue;
+}
 /* Nwitter Factory */
-
+.TalemPost {
+  margin-top: 50px;
+  border-bottom: 1px solid #fff;
+}
 .factoryForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  width: 96%;
+  margin: 10px 12px;
 }
 
 .factoryInput__container {
@@ -117,46 +144,31 @@ img.User_Avater {
   flex-grow: 1;
   height: 40px;
   padding: 0px 20px;
-  color: white;
-  border: 1px solid #04aaff;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 12px;
+  font-size: 20px;
 }
-
-.factoryInput__arrow {
-  position: absolute;
-  right: 0;
+.factoryInput_arrow {
   background-color: #04aaff;
-  height: 40px;
-  width: 40px;
-  padding: 10px 0px;
-  text-align: center;
-  border-radius: 20px;
-  color: white;
-  box-sizing: border-box;
+  border-radius: 50px;
+  height: 30px;
+  color: #ffff;
+  float: right;
+  padding: 0px 26px;
+  margin-right: 30px;
 }
-
 .factoryInput__label {
   color: #04aaff;
-  cursor: pointer;
+  height: 30px;
 }
-
-.factoryInput__label span {
-  margin-right: 10px;
-  font-size: 12px;
+.factoryInput__label li {
+  float: left;
+  margin-left: 5px;
 }
-
 .factoryForm__attachment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
 
 .factoryForm__attachment img {
-  height: 80px;
-  width: 80px;
-  border-radius: 40px;
+  width: 150px;
 }
 
 .factoryForm__clear {
@@ -169,41 +181,61 @@ img.User_Avater {
   margin-right: 10px;
   font-size: 12px;
 }
-
 /* Nweet */
 
 .nweetEdit .formBtn {
   cursor: pointer;
   margin-top: 15px;
-  margin-bottom: 5px;
 }
-
+/* nweet Post Area Style */
 .nweet {
-  margin-bottom: 20px;
-  background-color: white;
-  width: 100%;
-  max-width: 320px;
-  padding: 20px;
-  border-radius: 10px;
   position: relative;
   display: flex;
-  flex-direction: column;
-  color: rgba(0, 0, 0, 0.8);
+  width: 600px;
+  height: 100%;
+  border-bottom: 1px solid #ffff;
+  padding: 14px 0px;
 }
-
-.nweet h4 {
+.That_parson img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  float: left;
+  margin-right: 10px;
+}
+.parsonName {
+  float: left;
+  font-size: large;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.postDate {
+  padding-top: 4px;
+  color: #9b9b9b;
+}
+.That_Post {
+  margin-top: 15px;
+  margin-left: 70px;
+  width: 530px;
+  overflow: hidden;
+}
+.That_Post h4 {
   font-size: 14px;
+  margin-bottom: 5px;
+}
+.That_Post img {
+  width: 500px;
+  height: 100%;
+  margin-right: 6px;
 }
 /* navigation Secttion Css */
+.Navigation {
+  width: 24%;
+}
 .Navigation nav {
   position: fixed;
-  left: 4%;
-  height: -webkit-fill-available;
-  width: 240px;
-  border-right: 1px solid #787878;
-}
-.Navigation ul {
-  list-style: none;
+  left: 5%;
 }
 #homeIcon {
   width: fit-content;
@@ -248,11 +280,47 @@ img.User_Avater {
   padding-top: 6px;
   border-radius: 50px;
 }
+/* main Area Style Section */
+.Main_Talim {
+  width: 67%;
+  height: 100%;
+  border-left: 1px solid #ffff;
+  border-right: 1px solid #ffff;
+}
+.Main_head {
+  z-index: 3;
+  font-size: 25px;
+  padding-left: 7px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  height: 42px;
+  width: 601px;
+}
+.Main_head span {
+  float: right;
+  font-size: 11px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding-top: 9px;
+  margin-right: 5px;
+  transition: all 0.2s ease-in-out 0s;
+}
+.Main_head span:hover {
+  background-color: #ffffff24;
+}
+.Main_head h1 {
+  float: left;
+  padding-top: 5px;
+}
 .NaveBotttom {
   height: 56px;
   margin-top: 155px;
   width: 200px;
   border-radius: 50px;
+  transition: all 0.2s ease-in-out 0s;
 }
 .NaveBotttom:hover {
   background-color: #ffffff24;
@@ -263,18 +331,10 @@ img.User_Avater {
 }
 .NaveBotttom h1 {
   float: left;
-  font-size: 18px;
-  margin-left: 11px;
-  margin-top: 20px;
-}
-.nweet img {
-  right: -10px;
-  /* top: 20px; for user Avata*/
-  position: absolute;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  font-size: 15px;
+  margin-left: 6px;
   margin-top: 10px;
+  width: 116px;
 }
 
 .nweet__actions {
@@ -282,7 +342,6 @@ img.User_Avater {
   right: 10px;
   top: 10px;
 }
-
 .nweet__actions span {
   cursor: pointer;
 }
@@ -292,7 +351,6 @@ img.User_Avater {
 }
 
 /* Auth */
-
 .authContainer {
   display: flex;
   flex-direction: column;

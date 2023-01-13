@@ -70,8 +70,7 @@ const Navigation = ({userObj}) => {
           <span>Tweet</span>
           </Link>
         </div>
-      </ul>
-      <Link to="/profile"> 
+        <Link to="/profile"> 
           <div className="NaveBotttom">
             <span>
               {userObj.photoURL
@@ -80,11 +79,12 @@ const Navigation = ({userObj}) => {
             </span>
             <h1>
               {userObj.displayName
-                ? `${userObj.displayName} Profile`
+                ? `@${userObj.displayName} Profile`
                 : "Profile"}
             </h1>
           </div>
         </Link>
+      </ul>
     </nav>
   </div>
 )

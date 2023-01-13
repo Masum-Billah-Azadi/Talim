@@ -4,6 +4,8 @@ import { updateProfile } from "@firebase/auth";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
 //End add for Profile Picture
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { auth, storageService } from "../../firebase";
@@ -67,7 +69,8 @@ const Profile = ({refreshUser, userObj}) => {
     //Clear this Attacment
     const onClearAttachment = () => setAttachment(null);
   return (
-    <div className="container">
+    <div className="Profile_Container">
+      <h1>Edit Your Profile</h1>
       <form onSubmit={onSubmit} className="profileForm">
         <input
           onChange={onChange}
@@ -82,6 +85,11 @@ const Profile = ({refreshUser, userObj}) => {
         {/* Start profile Photo Add This Section */}
         <label for="attach-file" className="factoryInput__label">
         <span>Add photos</span>
+        <div className="Edit_Pro_pic">
+          {userObj.photoURL
+              ? <img className="Edit_Pro_img" src={userObj.photoURL} />
+              : <FontAwesomeIcon icon={faUser} color={"#04AAFF"} size="2x" />}
+          </div>
       </label>
       <input
         id="attach-file"

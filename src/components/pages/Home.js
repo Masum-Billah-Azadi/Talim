@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-no-comment-textnodes */
 
+import { faHandSparkles } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { dbService } from "../../firebase";
@@ -27,9 +29,11 @@ setNweets(nweetArr);
 
 
 return (
-        <div>
+      <div className='Home_Page'>
+        <div className="Main_Talim">
+          <div className="Main_head"><h1>Home</h1> <span><FontAwesomeIcon icon={faHandSparkles} color={"#ffff"} size="2x" /></span></div>
           <NweetFactory userObj={userObj} />
-          <div style={{ marginTop: 30 }}>
+          <>
             {nweets.map((nweet) => (
               <Nweet
                 key={nweet.id}
@@ -41,8 +45,12 @@ return (
                 isOwner={nweet.creatorId === userObj.uid}
               />
             ))}
-          </div>
+          </>
         </div>
+        <div className='Right_Side'>
+          <h1>Masum</h1>
+        </div>
+      </div>
       );
     }
     export default Home;
