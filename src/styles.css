@@ -78,7 +78,6 @@ form {
   width: 905px;
   display: flex;
 }
-
 /* Profile From Edit Section */
 .Profile_Container {
   background-color: #ffffff69;
@@ -113,10 +112,76 @@ img.User_Avater {
 .logOut {
   margin-top: 50px;
 }
+/* Right Site Design */
 .Right_Side {
   height: 53px;
   width: 303px;
-  background-color: blue;
+}
+.Searchbar {
+  margin-top: 5px;
+  position: fixed;
+  padding: 9px 18px;
+  border: 1px solid #95a8b4;
+  border-radius: 50px;
+  width: 23%;
+  margin-left: 18px;
+  font-weight: 400;
+  font-size: initial;
+}
+.Searchbar:hover {
+  background-color: #ffffff29;
+  border: 1px solid #1c9aef;
+}
+.Searchbar input {
+  margin-left: 10px;
+}
+.TrandTropic {
+  margin-top: 60px;
+  margin-left: 19px;
+  background: #16181c;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+.TrandTropic h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.TTropic {
+  margin-bottom: 10px;
+}
+.TTropic p {
+  color: rgb(113, 118, 123);
+}
+.TTropic h3 {
+  font-size: 17px;
+  margin: 2px 0;
+}
+.WTFollow {
+  margin-top: 12px;
+  margin-left: 19px;
+  background: #16181c;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+.WTFollow h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.FollowParson img {
+  float: left;
+}
+.Parson_name {
+  float: left;
+  margin-top: 5px;
+  padding-left: 2px;
+}
+.FollowParson button {
+  margin-top: 10px;
+  margin-left: 37px;
+  padding: 5px 14px;
+  border-radius: 50px;
 }
 /* Nwitter Factory */
 .TalemPost {
