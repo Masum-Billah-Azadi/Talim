@@ -31,10 +31,130 @@ a {
 form {
   width: 100%;
 }
+/* Responsive Style */
+@media only screen and (max-width: 600px) {
+  .RouterStayel {
+    justify-content: center;
+  }
+  .Main_head {
+    width: 100%;
+  }
+  .MenuBarD {
+    float: left;
+    margin-top: 5px;
+    background-color: #04aaff;
+    /* display: none; inline conditonal css*/
+    width: 80px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 5px;
+    font-size: large;
+  }
+  .Navigation {
+    display: none;
+    width: 0%;
+  }
+  .Navigation nav {
+    background: #404040;
+    z-index: 1;
+  }
+  .Right_Side {
+    display: none;
+  }
+  .Home_Page {
+    display: contents;
+  }
+  .Main_Talim {
+    width: 100%;
+    overflow: hidden;
+  }
+  .ProfilePicture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+  }
+  .nweet {
+    width: 100%;
+  }
+  .That_parson img {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .factoryInput__input {
+    padding: 0px 8px;
+  }
+  .That_Post {
+    margin-left: 52px;
+    width: 78%;
+  }
+  .That_Post img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .Home_Page {
+    display: flex;
+  }
+  .Main_head {
+    width: 599px;
+  }
+  .MenuBarD {
+    display: none;
+  }
+  .Main_head h1 {
+    float: left;
+    padding-top: 5px;
+  }
+  .Navigation {
+    width: 24%;
+  }
+  .Navigation nav {
+    left: 5%;
+  }
+  .Main_Talim {
+    width: 67%;
+    border-right: 1px solid #ffff;
+    border-left: 1px solid #ffff;
+  }
+  .ProfilePicture {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .nweet {
+    width: 600px;
+  }
+  .That_parson img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .factoryInput__input {
+    padding: 0px 20px;
+  }
+  .That_Post {
+    margin-left: 70px;
+    width: 530px;
+  }
+  .That_Post img {
+    width: 500px;
+  }
+}
+
+.factoryInput__input {
+  flex-grow: 1;
+  height: 40px;
+  font-size: 20px;
+}
 /* AppRouter Style Start */
 .RouterStayel {
-  display: flex;
   align-items: flex-start;
+  display: flex;
 }
 .nweet-input::placeholder {
   color: white;
@@ -76,7 +196,6 @@ form {
 }
 .Home_Page {
   width: 905px;
-  display: flex;
 }
 /* Profile From Edit Section */
 .Profile_Container {
@@ -99,11 +218,7 @@ img.Edit_Pro_img {
   margin-top: 10px;
 }
 /* profile pictute and User Avata Css */
-.ProfilePicture {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
+
 img.User_Avater {
   left: -44px;
   top: -13px;
@@ -116,6 +231,12 @@ img.User_Avater {
 .Right_Side {
   height: 53px;
   width: 303px;
+}
+.Search_p {
+  background: rgb(0, 0, 0);
+  height: 52px;
+  width: inherit;
+  position: fixed;
 }
 .Searchbar {
   margin-top: 5px;
@@ -157,6 +278,7 @@ img.User_Avater {
   font-size: 17px;
   margin: 2px 0;
 }
+
 .WTFollow {
   margin-top: 12px;
   margin-left: 19px;
@@ -169,17 +291,20 @@ img.User_Avater {
   font-weight: 700;
   margin-bottom: 15px;
 }
+.FollowParson {
+  width: 263px;
+  height: 68px;
+}
 .FollowParson img {
   float: left;
 }
 .Parson_name {
   float: left;
   margin-top: 5px;
-  padding-left: 2px;
 }
 .FollowParson button {
   margin-top: 10px;
-  margin-left: 37px;
+  margin-left: 6px;
   padding: 5px 14px;
   border-radius: 50px;
 }
@@ -205,12 +330,6 @@ img.User_Avater {
   width: 100%;
 }
 
-.factoryInput__input {
-  flex-grow: 1;
-  height: 40px;
-  padding: 0px 20px;
-  font-size: 20px;
-}
 .factoryInput_arrow {
   background-color: #04aaff;
   border-radius: 50px;
@@ -256,18 +375,12 @@ img.User_Avater {
 .nweet {
   position: relative;
   display: flex;
-  width: 600px;
-  height: 100%;
   border-bottom: 1px solid #ffff;
   padding: 14px 0px;
 }
 .That_parson img {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-left: 10px;
   float: left;
-  margin-right: 10px;
 }
 .parsonName {
   float: left;
@@ -276,13 +389,12 @@ img.User_Avater {
   margin-top: 2px;
 }
 .postDate {
-  padding-top: 4px;
+  margin-top: 6px;
   color: #9b9b9b;
+  float: left;
 }
 .That_Post {
-  margin-top: 15px;
-  margin-left: 70px;
-  width: 530px;
+  margin-top: 40px;
   overflow: hidden;
 }
 .That_Post h4 {
@@ -290,17 +402,16 @@ img.User_Avater {
   margin-bottom: 5px;
 }
 .That_Post img {
-  width: 500px;
   height: 100%;
   margin-right: 6px;
 }
 /* navigation Secttion Css */
-.Navigation {
+
+/* .Navigation {
   width: 24%;
-}
+} */
 .Navigation nav {
   position: fixed;
-  left: 5%;
 }
 #homeIcon {
   width: fit-content;
@@ -346,12 +457,7 @@ img.User_Avater {
   border-radius: 50px;
 }
 /* main Area Style Section */
-.Main_Talim {
-  width: 67%;
-  height: 100%;
-  border-left: 1px solid #ffff;
-  border-right: 1px solid #ffff;
-}
+
 .Main_head {
   z-index: 3;
   font-size: 25px;
@@ -360,7 +466,6 @@ img.User_Avater {
   background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(12px);
   height: 42px;
-  width: 601px;
 }
 .Main_head span {
   float: right;
@@ -375,10 +480,6 @@ img.User_Avater {
 }
 .Main_head span:hover {
   background-color: #ffffff24;
-}
-.Main_head h1 {
-  float: left;
-  padding-top: 5px;
 }
 .NaveBotttom {
   height: 56px;

@@ -72,6 +72,7 @@ return (
               </div>
           </div>
           <div className='WTFollow'>
+            <div>
               <h1>Who to follow</h1>
               <div className='FollowParson'>
               {userObj.photoURL
@@ -83,7 +84,32 @@ return (
                 </div>
                 <button>Follow</button>
               </div>
+
+              <div className='FollowParson'>
+              {userObj.photoURL
+                ? <img className="ProfilePicture" src={userObj.photoURL} />
+                : <FontAwesomeIcon icon={faUser} color={"#04AAFF"} size="2x" />}
+                <div className='Parson_name'>
+                  <h4>{userObj.displayName}</h4>
+                  <p>@{userObj.displayName}</p>
+                </div>
+                <button>Follow</button>
+              </div>
+
+              <div className='FollowParson'>
+              {userObj.photoURL
+                ? <img className="ProfilePicture" src={userObj.photoURL} />
+                : <FontAwesomeIcon icon={faUser} color={"#04AAFF"} size="2x" />}
+                <div className='Parson_name'>
+                  <h4>{userObj.displayName}</h4>
+                  <p>@{userObj.displayName}</p>
+                </div>
+                <button>Follow</button>
+              </div>
+            </div>
           </div>
+          
+          
         </div>
       </div>
       );

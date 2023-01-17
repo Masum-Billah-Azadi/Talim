@@ -44,7 +44,7 @@ const AppRouter = ()=>{
       });
   };
     return(
-      <div className="RouterStayel">
+      <div className="RouterStayel">   
       {init ? (
       <Router>
         {Boolean(userObj) && <Navigation userObj={userObj}/>}
