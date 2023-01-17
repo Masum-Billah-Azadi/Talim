@@ -51,7 +51,7 @@ form {
     font-size: large;
   }
   .Navigation {
-    display: none;
+    /* display: none; */
     width: 0%;
   }
   .Navigation nav {
@@ -98,15 +98,14 @@ form {
   .Home_Page {
     display: flex;
   }
+  .NavMenu {
+    display: none;
+  }
   .Main_head {
     width: 599px;
   }
   .MenuBarD {
     display: none;
-  }
-  .Main_head h1 {
-    float: left;
-    padding-top: 5px;
   }
   .Navigation {
     width: 24%;
@@ -145,7 +144,18 @@ form {
     width: 500px;
   }
 }
-
+.NavMenu {
+  z-index: 5;
+  position: fixed;
+  padding: 7px 15px;
+  font-size: 20px;
+  border-radius: 50px;
+  background-color: #1c9aef;
+}
+.Main_head h1 {
+  float: left;
+  padding-top: 5px;
+}
 .factoryInput__input {
   flex-grow: 1;
   height: 40px;

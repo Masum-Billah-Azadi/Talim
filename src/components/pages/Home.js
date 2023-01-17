@@ -25,6 +25,7 @@ id: document.id,
 }));
 setNweets(nweetArr);
 });
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 
@@ -32,7 +33,7 @@ return (
       <div className='Home_Page'>
         <div className="Main_Talim">
           <div className="Main_head"><h1>Home</h1> <span><FontAwesomeIcon icon={faHandSparkles} color={"#ffff"} size="2x" /></span></div>
-          <NweetFactory userObj={userObj} />
+          <NweetFactory userObj={userObj}/>
           <>
             {nweets.map((nweet) => (
               <Nweet

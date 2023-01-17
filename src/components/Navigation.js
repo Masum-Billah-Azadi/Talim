@@ -2,13 +2,33 @@
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faBell, faEnvelope, faHashtag, faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = ({userObj}) => {
+  const [navd, setnavd] = useState(() => {
+    // eslint-disable-next-line no-restricted-globals
+    let width = screen.width;
+    if (width > 600) {
+      return "block";
+    }
+    return "none";
+  });
+  function navShow() {
+    if (navd === "none") {
+      setnavd("block");
+    } else {
+      setnavd("none");
+    }
+  }
+  const myComponentStyle = {
+    display: navd,
+ }
+ console.log(navd);
   return(
   <div className="Navigation">
-    <nav>
+    <button onClick={navShow} className="NavMenu" >Menu</button>
+    <nav style={myComponentStyle}>
       <ul>
           <Link to="/">
           <div id="homeIcon">
