@@ -115,8 +115,7 @@ form {
   }
   .Main_Talim {
     width: 67%;
-    border-right: 1px solid #ffff;
-    border-left: 1px solid #ffff;
+    border: 1px solid rgb(47, 51, 54);
   }
   .ProfilePicture {
     width: 50px;
@@ -179,7 +178,6 @@ form {
 }
 
 .formInput {
-  width: 80%;
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid black;
@@ -191,28 +189,22 @@ form {
 }
 .formBtn {
   cursor: pointer;
-  width: 80%;
   padding: 7px 20px;
   text-align: center;
   color: white;
   border-radius: 20px;
   background-color: #04aaff;
-  cursor: pointer;
-}
-
-.cancelBtn {
-  cursor: pointer;
-  background-color: tomato;
 }
 .Home_Page {
   width: 905px;
 }
 /* Profile From Edit Section */
 .Profile_Container {
-  background-color: #ffffff69;
   margin-top: 50px;
   border-radius: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .Profile_Container h1 {
   font-size: large;
@@ -220,12 +212,14 @@ form {
 }
 .profileForm {
   padding-bottom: 30px;
-  width: 100%;
+  width: 80%;
+  background-color: #ffffff69;
+  border-radius: 10px;
 }
-img.Edit_Pro_img {
-  width: 300px;
+.Edit_Pro_img {
+  width: 89%;
   height: fit-content;
-  margin-top: 10px;
+  margin: 10px;
 }
 /* profile pictute and User Avata Css */
 
@@ -236,6 +230,12 @@ img.User_Avater {
 
 .logOut {
   margin-top: 50px;
+  width: 100px;
+  padding: 5px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50px;
+  border-style: none;
 }
 /* Right Site Design */
 .Right_Side {
@@ -321,7 +321,7 @@ img.User_Avater {
 /* Nwitter Factory */
 .TalemPost {
   margin-top: 50px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(47, 51, 54);
 }
 .factoryForm {
   display: flex;
@@ -355,7 +355,8 @@ img.User_Avater {
 }
 .factoryInput__label li {
   float: left;
-  margin-left: 5px;
+  margin-left: 12px;
+  cursor: pointer;
 }
 .factoryForm__attachment {
   text-align: center;
@@ -527,10 +528,15 @@ img.User_Avater {
 }
 
 /* Auth */
+.SingupPages {
+  width: 100%;
+}
+.authContainer h1 {
+  margin-bottom: 10px;
+}
 .authContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -563,7 +569,7 @@ img.User_Avater {
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 1);
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 15px;
   color: black;
   box-sizing: content-box;
 }

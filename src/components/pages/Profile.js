@@ -70,8 +70,8 @@ const Profile = ({refreshUser, userObj}) => {
     const onClearAttachment = () => setAttachment(null);
   return (
     <div className="Profile_Container">
-      <h1>Edit Your Profile</h1>
       <form onSubmit={onSubmit} className="profileForm">
+        <h1>Edit Your Profile</h1>
         <input
           onChange={onChange}
           type="text"
@@ -83,7 +83,7 @@ const Profile = ({refreshUser, userObj}) => {
         
 
         {/* Start profile Photo Add This Section */}
-        <label for="attach-file" className="factoryInput__label">
+        <label for="attach-file" className="factoryInput__label"><br></br>
         <span>Add photos</span>
         <div className="Edit_Pro_pic">
           {userObj.photoURL
@@ -97,7 +97,7 @@ const Profile = ({refreshUser, userObj}) => {
         accept="image/*"
         onChange={onFileChange}
         style={{
-          opacity: 0,
+          display: "none",
         }}
       />
       {attachment && (
@@ -122,11 +122,11 @@ const Profile = ({refreshUser, userObj}) => {
           style={{
             marginTop: 10,
           }}
-        />
+        /><br></br>
+        <button className="logOut" onClick={onLogOutClick}>
+          Log Out
+        </button>
       </form>
-      <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
-        Log Out
-      </span>
     </div>
   )
 };

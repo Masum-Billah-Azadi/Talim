@@ -32,13 +32,13 @@ const Navigation = ({userObj}) => {
       <ul>
           <Link to="/">
           <div id="homeIcon">
-            <FontAwesomeIcon icon={faTwitter} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faTwitter} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           </Link>
         <li style={{ marginTop:30 }}>
           <Link to="/">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faHome} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faHome} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>Home</span>
           </Link>
@@ -46,7 +46,7 @@ const Navigation = ({userObj}) => {
         <li>
           <Link to="/">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faHashtag} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faHashtag} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>Explore</span>
           </Link>
@@ -54,7 +54,7 @@ const Navigation = ({userObj}) => {
         <li>
           <Link to="/">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faBell} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faBell} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>Notifications</span>
           </Link>
@@ -62,16 +62,16 @@ const Navigation = ({userObj}) => {
         <li>
           <Link to="/">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faEnvelope} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faEnvelope} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>Messages</span>
           </Link>
         </li>
         
         <li>
-          <Link to="/">
+          <Link to="/profile">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faUser} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faUser} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>Profile</span>
           </Link>
@@ -79,7 +79,7 @@ const Navigation = ({userObj}) => {
         <li>
           <Link to="/">
           <div className="NavIcon">
-            <FontAwesomeIcon icon={faList} color={"#ffff"} size="2x" />
+            <FontAwesomeIcon icon={faList} color={"rgb(214, 217, 219)"} size="2x" />
           </div>
           <span>More</span>
           </Link>

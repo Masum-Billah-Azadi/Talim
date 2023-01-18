@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { dbService, storageService } from "../firebase";
+import { dateFormater } from "./contexts/DateFor";
 
 //icon input
 
@@ -32,13 +33,13 @@ const Nweet = ({ nweetObj, isOwner,userId,createdAt,userImage, }) => {
   const onChange = ({ target: { value } }) => {
     setNewNweet(value);
   };
-  function formatDate(milliseconds) {
-    const date = new Date(milliseconds);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${day}-${month}-${year}`;
-  }
+  // function formatDate(milliseconds) {
+  //   const date = new Date(milliseconds);
+  //   const year = date.getFullYear();
+  //   const month = String(date.getMonth() + 1).padStart(2, '0');
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   return `${day}-${month}-${year}`;
+  // }
   return (
     <div className="nweet">
       {editing ? (
@@ -64,7 +65,7 @@ const Nweet = ({ nweetObj, isOwner,userId,createdAt,userImage, }) => {
           <div className="That_parson">
             {userImage &&<img src={userImage}/>}
             <div className="parsonName">{userId}</div>
-            <div className="postDate">{formatDate(createdAt)}</div>
+            <div className="postDate">{dateFormater(createdAt)}</div>
           </div>
           <div className="That_Post">
             <h4>{nweetObj.text}</h4>
