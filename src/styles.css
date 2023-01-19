@@ -36,6 +36,10 @@ form {
   .RouterStayel {
     justify-content: center;
   }
+  .NavMenu {
+    display: flex;
+    height: 60px;
+  }
   .Main_head {
     width: 100%;
   }
@@ -51,12 +55,10 @@ form {
     font-size: large;
   }
   .Navigation {
-    /* display: none; */
     width: 0%;
   }
   .Navigation nav {
-    background: #404040;
-    z-index: 1;
+    display: none;
   }
   .Right_Side {
     display: none;
@@ -146,10 +148,11 @@ form {
 .NavMenu {
   z-index: 5;
   position: fixed;
-  padding: 7px 15px;
+  padding: 7px 40px;
   font-size: 20px;
-  border-radius: 50px;
-  background-color: #1c9aef;
+  background-color: #000;
+  width: 100%;
+  justify-content: space-between;
 }
 .Main_head h1 {
   float: left;
@@ -186,6 +189,7 @@ form {
   color: black;
   margin: 12px 32px;
   font-size: larger;
+  width: inherit;
 }
 .formBtn {
   cursor: pointer;
@@ -216,10 +220,14 @@ form {
   background-color: #ffffff69;
   border-radius: 10px;
 }
+.Edit_Pro_pic {
+  margin-top: 10px;
+}
 .Edit_Pro_img {
-  width: 89%;
-  height: fit-content;
-  margin: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 /* profile pictute and User Avata Css */
 
@@ -229,7 +237,7 @@ img.User_Avater {
 }
 
 .logOut {
-  margin-top: 50px;
+  margin-top: 10px;
   width: 100px;
   padding: 5px;
   background-color: red;
@@ -241,6 +249,8 @@ img.User_Avater {
 .Right_Side {
   height: 53px;
   width: 303px;
+  position: sticky;
+  top: -205px;
 }
 .Search_p {
   background: rgb(0, 0, 0);
@@ -386,7 +396,7 @@ img.User_Avater {
 .nweet {
   position: relative;
   display: flex;
-  border-bottom: 1px solid #ffff;
+  border-bottom: 1px solid rgb(47, 51, 54);
   padding: 14px 0px;
 }
 .That_parson img {
@@ -431,9 +441,9 @@ img.User_Avater {
   transition: all 0.2s ease-in-out 0s;
 }
 #homeIcon:hover {
-  background-color: #ffffff24;
+  background-color: #04aaff2b;
 }
-.Navigation li {
+.Navigation nav li {
   padding: 10px 17px;
   width: -moz-fit-content;
   width: fit-content;

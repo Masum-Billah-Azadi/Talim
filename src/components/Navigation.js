@@ -1,34 +1,41 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faBell, faEnvelope, faHashtag, faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faEnvelope, faHashtag, faHome, faList, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = ({userObj}) => {
-  const [navd, setnavd] = useState(() => {
     // eslint-disable-next-line no-restricted-globals
-    let width = screen.width;
-    if (width > 600) {
-      return "block";
-    }
-    return "none";
-  });
-  function navShow() {
-    if (navd === "none") {
-      setnavd("block");
-    } else {
-      setnavd("none");
-    }
-  }
-  const myComponentStyle = {
-    display: navd,
- }
- console.log(navd);
+    const height = screen.height;
+    const margHei = height-60;
+    
+ console.log(height);
   return(
   <div className="Navigation">
-    <button onClick={navShow} className="NavMenu" >Menu</button>
-    <nav style={myComponentStyle}>
+    <div className="NavMenu"  style={{ marginTop: margHei }}>
+      <span>
+        <Link to="/">
+          <FontAwesomeIcon icon={faHome} color={"rgb(214, 217, 219)"} size="2x" />
+        </Link>
+      </span>
+      <span>
+        <Link to="/">
+          <FontAwesomeIcon icon={faSearch} color={"rgb(214, 217, 219)"} size="2x" />
+        </Link>
+      </span>
+      <span>
+        <Link to="/">
+          <FontAwesomeIcon icon={faEnvelope} color={"rgb(214, 217, 219)"} size="2x" />
+        </Link>
+      </span>
+      <span>
+        <Link to="/">
+          <FontAwesomeIcon icon={faBell} color={"rgb(214, 217, 219)"} size="2x" />
+        </Link>
+      </span>
+    </div>
+    <nav>
       <ul>
           <Link to="/">
           <div id="homeIcon">

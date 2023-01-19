@@ -4,6 +4,7 @@ import { faClock, faGift, faImage, faList, faLocationArrow, faSmile, faTimes, fa
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from "../firebase";
 
@@ -59,10 +60,12 @@ const NweetFactory = ({ userObj }) => {
   <div className="TalemPost">
     <form onSubmit={onSubmit} className="factoryForm">
       <div className="factoryInput__container">
-      <span>
+            <span>
+            <Link to="/profile">
               {userObj.photoURL
                 ? <img className="ProfilePicture" src={userObj.photoURL} />
                 : <FontAwesomeIcon icon={faUser} color={"#04AAFF"} size="2x" />}
+            </Link>
             </span>
         <input
           className="factoryInput__input"
