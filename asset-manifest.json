@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Talim/static/css/main.b8dd6769.css",
+    "main.js": "/Talim/static/js/main.6fceda19.js",
+    "static/js/787.7a40cde5.chunk.js": "/Talim/static/js/787.7a40cde5.chunk.js",
+    "index.html": "/Talim/index.html",
+    "main.b8dd6769.css.map": "/Talim/static/css/main.b8dd6769.css.map",
+    "main.6fceda19.js.map": "/Talim/static/js/main.6fceda19.js.map",
+    "787.7a40cde5.chunk.js.map": "/Talim/static/js/787.7a40cde5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8dd6769.css",
+    "static/js/main.6fceda19.js"
+  ]
+}
