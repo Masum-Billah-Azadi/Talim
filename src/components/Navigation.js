@@ -6,32 +6,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = ({userObj}) => {
-    // eslint-disable-next-line no-restricted-globals
-    const height = screen.height;
-    const margHei = height-60;
-    
- console.log(height);
   return(
   <div className="Navigation">
-    <div className="NavMenu"  style={{ marginTop: margHei }}>
+    <div className="NavMenu">
       <span>
         <Link to="/">
-          <FontAwesomeIcon icon={faHome} color={"rgb(214, 217, 219)"} size="2x" />
+          <FontAwesomeIcon icon={faHome} color={"rgb(214, 217, 219)"} size="1x" />
         </Link>
       </span>
       <span>
         <Link to="/">
-          <FontAwesomeIcon icon={faSearch} color={"rgb(214, 217, 219)"} size="2x" />
+          <FontAwesomeIcon icon={faSearch} color={"rgb(214, 217, 219)"} size="1x" />
         </Link>
       </span>
       <span>
         <Link to="/">
-          <FontAwesomeIcon icon={faEnvelope} color={"rgb(214, 217, 219)"} size="2x" />
+          <FontAwesomeIcon icon={faEnvelope} color={"rgb(214, 217, 219)"} size="1x" />
         </Link>
       </span>
       <span>
         <Link to="/">
-          <FontAwesomeIcon icon={faBell} color={"rgb(214, 217, 219)"} size="2x" />
+          <FontAwesomeIcon icon={faBell} color={"rgb(214, 217, 219)"} size="1x" />
         </Link>
       </span>
     </div>
